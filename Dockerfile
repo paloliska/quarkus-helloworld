@@ -35,6 +35,8 @@ RUN mkdir /workspace \
   && ln -s /workspace /project
 WORKDIR /workspace
 
+COPY . /workspace
+
 # Run as new user
 RUN useradd -s /sbin/nologin -m mvn
 RUN chown mvn:mvn /workspace

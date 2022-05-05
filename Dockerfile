@@ -11,9 +11,7 @@ ENV MAVEN_HOME="/opt/apache-maven-$MAVEN_VERSION"
 ENV PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH"
 
 RUN apt-get -y update \
-  && apt-get -y install build-essential libz-dev zlib1g-dev curl \
-  && apt-get -y autoremove \
-  && apt-get -y clean
+  && apt-get -y install build-essential libz-dev zlib1g-dev curl
 
 
 RUN curl -s -L "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-java$OPENJDK_VERSION-linux-amd64-$GRAALVM_VERSION.tar.gz" -o "graalvm-ce-java$OPENJDK_VERSION-linux-amd64-$GRAALVM_VERSION.tar.gz" \

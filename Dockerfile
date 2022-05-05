@@ -1,6 +1,6 @@
 FROM instructure/graalvm-ce:21-java11 as builder
 COPY . /project
-RUN gu install mvn
+RUN gu install maven
 
 # uncomment this to set the MAVEN_MIRROR_URL of your choice, to make faster builds
 # ARG MAVEN_MIRROR_URL=<your-maven-mirror-url>

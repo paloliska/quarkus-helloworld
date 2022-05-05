@@ -1,13 +1,6 @@
 FROM instructure/graalvm-ce:21-java11 as builder
 COPY . /project
-RUN gu install wget -y
-RUN wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz -P /tmp
-RUN tar xf /tmp/apache-maven-3.6.1-bin.tar.gz -C /opt
-RUN ln -s /opt/apache-maven-3.6.1 /opt/maven
-
-ENV M2_HOME=/opt/maven
-ENV MAVEN_HOME=/opt/maven
-ENV PATH=${M2_HOME}/bin:${PATH}
+RUN gu install mvn
 
 # uncomment this to set the MAVEN_MIRROR_URL of your choice, to make faster builds
 # ARG MAVEN_MIRROR_URL=<your-maven-mirror-url>

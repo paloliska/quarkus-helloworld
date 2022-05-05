@@ -6,7 +6,7 @@ COPY . /project
 # e.g.
 # ARG MAVEN_MIRROR_URL=http://192.168.64.1:8081/nexus/content/groups/public
 
-RUN /usr/local/bin/entrypoint-run.sh mvn -DskipTests clean package -Pnative
+RUN mvn -DskipTests clean package -Pnative
 
 FROM registry.fedoraproject.org/fedora-minimal
 

@@ -11,7 +11,6 @@ ENV MAVEN_HOME="/opt/apache-maven-$MAVEN_VERSION"
 ENV PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH"
 
 RUN apt-get -y update \
-  && apt-get -y upgrade \
   && apt-get -y install build-essential libz-dev zlib1g-dev curl \
   && apt-get -y autoremove \
   && apt-get -y clean

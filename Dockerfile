@@ -2,7 +2,7 @@
 FROM ghcr.io/graalvm/jdk:ol8-java11 as builder
 #FROM ghcr.io/graalvm/graalvm-ce:ol8-java11-22.1.0 as builder
 COPY . /project
-RUN yum install maven
+RUN dnf install maven
 
 # uncomment this to set the MAVEN_MIRROR_URL of your choice, to make faster builds
 # ARG MAVEN_MIRROR_URL=<your-maven-mirror-url>

@@ -1,6 +1,6 @@
 #FROM instructure/graalvm-ce:21-java11 as builder
-#FROM ghcr.io/graalvm/jdk:java11-21.0.0 as builder
-FROM ghcr.io/graalvm/graalvm-ce:ol8-java11-22.1.0 as builder
+FROM ghcr.io/graalvm/jdk:ol8-java11 as builder
+#FROM ghcr.io/graalvm/graalvm-ce:ol8-java11-22.1.0 as builder
 COPY . /project
 RUN yum install maven
 

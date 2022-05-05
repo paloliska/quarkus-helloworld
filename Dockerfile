@@ -44,8 +44,10 @@ USER mvn
 
 RUN mvn -DskipTests clean package -Pnative
 
+RUN ls /workspace/target
+
 FROM registry.fedoraproject.org/fedora-minimal
 
-COPY --from=builder /project/target/helloworld-java-quarkus-1.0-SNAPSHOT-runner /app
+COPY --from=builder /workspace/target/helloworld-java-quarkus-1.0-SNAPSHOT-runner /app
 
 ENTRYPOINT [ "/app" ]
